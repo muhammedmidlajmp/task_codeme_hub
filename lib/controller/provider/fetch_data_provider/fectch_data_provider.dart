@@ -1,15 +1,16 @@
 import 'dart:convert';
+import 'package:code_me_hub/model/lead_data_model/lead_data_model.dart';
 import 'package:http/http.dart' as http;
 
 Future<LeadListResponse> fetchData() async {
-  final String apiUrl = 'https://your-api-endpoint.com/leads'; // Replace with your actual API endpoint
-
+  const String apiUrl =
+      'https://crm-beta-api.vozlead.in/api/v2/lead/lead_list/?priority=&date=&to=&from=&status=&page=1&item=25&search=&user_id';
   try {
     final response = await http.get(
       Uri.parse(apiUrl),
       headers: {
-        'Authorization': 'Bearer your_access_token', // Replace with your actual access token if required
-        'Content-Type': 'application/json', // Add any other headers you need
+        'Authorization': 'Token bcd4fe3b56a1f73e190c28dd7487bd0f03a7eb49',
+        'Content-Type': 'application/json',
       },
     );
 
